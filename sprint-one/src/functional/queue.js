@@ -12,7 +12,6 @@ var Queue = function(){
 
     storage[index]=value;
     index++;
-    console.log(storage)
 
     return storage;
   };
@@ -23,9 +22,7 @@ var Queue = function(){
     delete storage[0];
 
     for (var i=0; i < index -1; i++){
-      // debugger;
       storage[i] = storage[i+1];
-      console.log(i, storage[i])
     }
 
     if (index>0) {
