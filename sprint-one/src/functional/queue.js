@@ -5,14 +5,39 @@ var Queue = function(){
   var storage = {};
 
   // Implement the methods below
+  var index = 0
+
 
   someInstance.enqueue = function(value){
+
+    storage[index]=value;
+    index++;
+    console.log(storage)
+
+    return storage;
   };
 
   someInstance.dequeue = function(){
+
+    var result = storage[0];
+    delete storage[0];
+
+    for (var i=0; i < index -1; i++){
+      // debugger;
+      storage[i] = storage[i+1];
+      console.log(i, storage[i])
+    }
+
+    if (index>0) {
+      index--;
+    }
+
+    return result;
   };
 
   someInstance.size = function(){
+
+    return index;
   };
 
   return someInstance;
