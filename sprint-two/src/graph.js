@@ -1,12 +1,44 @@
 
 
 var Graph = function(){
+
+  this.storage = {}
+  this.nodeCounter = 0
+
+
 };
 
-Graph.prototype.addNode = function(node){
+var Planet = function(value) {
+  this.edgeCounter = 0;
+  this.value = value;
 };
 
-Graph.prototype.contains = function(node){
+// planet 1 is a string i.e. the value of a planet
+var Edge = function(planet1,planet2) {
+
+  this.planet1 = planet1;
+  this.planet2 = planet2;
+
+};
+
+
+Graph.prototype.addNode = function(value){
+  var newPlanet = new Planet(value);
+
+
+  this.storage[this.nodeCounter] = newPlanet;
+  this.nodeCounter++;
+};
+
+Graph.prototype.contains = function(value){
+
+  for (var i = 0; i < this.nodeCounter; i++){
+    if (this.storage[i].value === value) {
+      return true;
+    };
+  };
+
+  return false;
 };
 
 Graph.prototype.removeNode = function(node){
