@@ -34,6 +34,23 @@ var LinkedList = function(){
   };
 
   list.contains = function(target){
+    // debugger;
+    var testNode = this.head;
+
+    var recurse = function(testNode){
+      if (testNode.value === target){
+        return true;
+      }
+      else if (testNode.next === null){
+        return false;
+      }
+      else {
+        return recurse(testNode.next);
+      }
+    };
+
+    return recurse(testNode);
+
   };
 
   return list;
