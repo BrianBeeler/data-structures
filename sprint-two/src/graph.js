@@ -10,6 +10,7 @@ var Graph = function(){
 
 Graph.prototype.addNode = function(node){
 
+  // creates new node with key: <node> and value: array waiting for edges
   this.storage[node] = [];
 
 };
@@ -26,13 +27,14 @@ Graph.prototype.contains = function(value){
 Graph.prototype.removeNode = function(node){
 
 
-  for (var i = 0; i < this.storage[node].length; i++){
-    for (var j = 0; j < this.storage[node][i].length; j++){
-      if (this.storage[node][i][j] === node){
-        this.storage[node][i].splice(j, 1);
+  _.each(this.storage[node], function(neighbors){
+    _.each(neighbors, function(item, i){
+      if (item === node){
+        neighbors.splice(i, 1);
       }
-    }
-  }
+    })
+
+  })
 
   delete this.storage[node];
 
@@ -40,12 +42,18 @@ Graph.prototype.removeNode = function(node){
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
 
-  for (var i =0; i < this.storage[fromNode].length; i++){
-    if (this.storage[fromNode][i] === toNode){
-      return true;
+
+
+  var result = false;
+
+  _.each(this.storage[fromNode], function(fromNodeNeighbor){
+    if (fromNodeNeighbor === toNode){
+      result = true;
     }
-  }
-  return false;
+  });
+
+  return result;
+
 
 };
 

@@ -43,7 +43,7 @@ treeMethods.contains = function(target){
   };
 
   recurse(this);
-  return result
+  return result;
 
 };
 

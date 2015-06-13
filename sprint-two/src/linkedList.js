@@ -21,7 +21,6 @@ var LinkedList = function(){
     var result = this.head
 
     if (this.head.next === null){
-      // this.head = this.head.next;
       delete this.head;
     }
     else{
@@ -34,7 +33,6 @@ var LinkedList = function(){
   };
 
   list.contains = function(target){
-    // debugger;
     var testNode = this.head;
 
     var recurse = function(testNode){
