@@ -49,13 +49,11 @@ var someMethods = {
         result = true;
       }
 
-      if (target > newTree.value && (newTree.right)){
-
+      if (target > newTree.value && newTree.right){
         traverse(newTree.right);
       }
 
-      if (target < newTree.value && (newTree.left)){
-
+      if (target < newTree.value && newTree.left){
         traverse(newTree.left);
       }
     }
