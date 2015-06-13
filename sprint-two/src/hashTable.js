@@ -9,26 +9,22 @@ var HashTable = function(){
 };
 
 HashTable.prototype.insert = function(k, v){
-  // debugger;
+
   var i = getIndexBelowMaxForKey(k, this._limit);
-  //var currentBucket=this._storage
   var currentBucket = this._storage.get(i);
   currentBucket[k]=v;
-  //this._storage.set(currentBucket,i)
 };
 
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   var currentBucket = this._storage.get(i);
-  // debugger;
+
   if (!currentBucket[k]){
     return null;
   }
   else {
     return currentBucket[k];
   }
-
-
 };
 
 HashTable.prototype.remove = function(k){
@@ -42,7 +38,6 @@ HashTable.prototype.remove = function(k){
   else {
     delete currentBucket[k];
   }
-
 };
 
 
