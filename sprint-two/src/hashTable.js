@@ -20,7 +20,6 @@ HashTable.prototype.insert = function(k, v){
       return;
     }
   }
-
   currentBucket.push([k,v]);
 };
 

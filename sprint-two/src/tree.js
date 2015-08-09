@@ -8,43 +8,30 @@ var Tree = function(value){
   return newTree;
 };
 
-
-
-
-
 var treeMethods = {};
-
 treeMethods.addChild = function(value){
-
   var treeChild = Tree(value);
   this.children.push(treeChild);
-
 };
 
 treeMethods.contains = function(target){
 
   var result=false
-
   var recurse = function(newTree){
     if (newTree.value===target) {
       result=true ;
-
     } else if (newTree.children.length===0) {
         return false;
       }
-
     else {
       for (var i=0; i<newTree.children.length;i++) {
         recurse(newTree.children[i]);
       };
-
       return false;
     }
   };
-
   recurse(this);
   return result;
-
 };
 
 

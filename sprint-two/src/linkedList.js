@@ -27,8 +27,6 @@ var LinkedList = function(){
       delete this.head;
       this.head = result.next;
     }
-
-
     return result.value;
   };
 
