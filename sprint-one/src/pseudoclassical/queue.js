@@ -12,6 +12,7 @@ Queue.prototype.enqueue = function(value) {
   this.counter++
 }
 Queue.prototype.dequeue = function() {
+
   var result = this.storage[0];
   delete this.storage[0];
 

@@ -7,33 +7,27 @@ var Queue = function() {
   someInstance.storage = {};
 
   return someInstance;
-
 };
 
 var queueMethods = {
   size: function(){
     return this.counter;
   },
-
   enqueue: function(value){
     this.storage[this.counter] = value;
     this.counter++;
 
   },
-
   dequeue: function() {
     var result = this.storage[0];
     delete this.storage[0]
-
     for (var i=0; i<this.counter-1;i++) {
       this.storage[i]=this.storage[i+1]
     }
-
-     if (this.counter>0) {
-       this.counter--
-     }
-
-     return result
+    if (this.counter>0) {
+      this.counter--
+    }
+    return result
   }
 };
 

@@ -29,11 +29,4 @@ var stackMethods = {
 
     return result;
   }
-
-
 };
-
-
-// push
-// pop
-// size

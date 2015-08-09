@@ -12,13 +12,11 @@ var stackMethods = {
   size: function(){
     return this.counter;
   },
-
   push: function(value){
 
     this.storage[this.counter] = value;
     this.counter++;
   },
-
   pop: function() {
     var result = this.storage[this.counter-1];
     delete this.storage[this.counter-1];

@@ -14,7 +14,6 @@ HashTable.prototype.insert = function(k, v){
 
   var i = getIndexBelowMaxForKey(k, this._limit);
   var currentBucket = this._storage.get(i);
-
   for (var j = 0; j < currentBucket.length; j++) {
     if (currentBucket[j][0] === k) {
       currentBucket[j][1] = v;
@@ -49,7 +48,6 @@ HashTable.prototype.remove = function(k){
       currentBucket.splice(j,1);
     }
   }
-
   this._storage.set(i, currentBucket);
 };
 
